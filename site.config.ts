@@ -9,9 +9,9 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Next.js Notion Starter Kit',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
-  author: 'Travis Fischer',
+  name: 'JR-Fank', 
+  domain: 'jrfank.cc', 
+  author: 'JR-Fank',    
 
   // open graph metadata (optional)
   description: 'Example Next.js Notion Starter Kit Site', 
@@ -21,11 +21,11 @@ export default siteConfig({
   github: 'transitive-bullshit',
   linkedin: 'fisch2',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
-  // newsletter: '#', // optional newsletter URL
-  // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
+  // newsletter: '#', // optional newsletter URL 
+  youtube: 'channel/UCWmPktodw6BZuRbiW6FsvPQ', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX` 
 
-  // default notion icon and cover images for site-wide consistency (optional)
-  // page-specific values will override these site-wide defaults
+  // default notion icon and cover images for site-wide consistency (optional) 
+  // page-specific values will override these site-wide defaults 
   defaultPageIcon: null,
   defaultPageCover: null,
   defaultPageCoverPosition: 0.5,
