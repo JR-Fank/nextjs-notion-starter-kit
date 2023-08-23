@@ -99,18 +99,12 @@
 .github:hover {
   border-color: #c9510c;
 }
-.Telegram .actionBgPane {
-  background: #847872;
-}
-.Telegram:hover {
-  border-color: #5c109f;
-}
 
-.youtube .actionBgPane {
-  background: #FF0000;
+.zhihu .actionBgPane {
+  background: #0066FF;
 }
-.youtube:hover {
-  border-color: #FF0000;
+.zhihu:hover {
+  border-color: #0066FF;
 }
 
 .medium .actionBgPane {
@@ -118,13 +112,6 @@
 }
 .medium:hover {
   border-color: #00ab6c;
-}
-
-.newsletter .actionBgPane {
-  background: #777777;
-}
-.newsletter:hover {
-  border-color: #777777;
 }
 
 .email .actionBgPane {
