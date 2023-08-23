@@ -1,31 +1,36 @@
 import * as React from 'react'
-import dynamic from 'next/dynamic'
-import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-
+import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import cs from 'classnames'
-import { PageBlock } from 'notion-types'
-import { formatDate, getBlockTitle, getPageProperty } from 'notion-utils'
-import BodyClassName from 'react-body-classname'
-import { NotionRenderer } from 'react-notion-x'
-import TweetEmbed from 'react-tweet-embed'
+import { useRouter } from 'next/router'
 import { useSearchParam } from 'react-use'
+import BodyClassName from 'react-body-classname'
+import { PageBlock } from 'notion-types'
 
-import * as config from '@/lib/config'
-import * as types from '@/lib/types'
-import { mapImageUrl } from '@/lib/map-image-url'
-import { getCanonicalPageUrl, mapPageUrl } from '@/lib/map-page-url'
-import { searchNotion } from '@/lib/search-notion'
-import { useDarkMode } from '@/lib/use-dark-mode'
+import TweetEmbed from 'react-tweet-embed'
 
-import { Footer } from './Footer'
+// core notion renderer
+import { NotionRenderer } from 'react-notion-x'
 
+// utils
+import { getBlockTitle, getPageProperty, formatDate } from 'notion-utils'
+import { mapPageUrl, getCanonicalPageUrl } from 'lib/map-page-url'
+import { mapImageUrl } from 'lib/map-image-url'
+import { searchNotion } from 'lib/search-notion'
+import { useDarkMode } from 'lib/use-dark-mode'
+import * as types from 'lib/types'
+import * as config from 'lib/config'
+
+// components
 import { Loading } from './Loading'
-import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
-import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
+import { PageAside } from './PageAside'
+import { Footer } from './Footer'
+import { NotionPageHeader } from './NotionPageHeader'
+import { GitHubShareButton } from './GitHubShareButton'
+
 import styles from './styles.module.css'
 
 // -----------------------------------------------------------------------------
@@ -35,7 +40,7 @@ import styles from './styles.module.css'
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(async (m) => {
     // add / remove any prism syntaxes here
-    await Promise.allSettled([
+    await Promise.all([
       import('prismjs/components/prism-markup-templating.js'),
       import('prismjs/components/prism-markup.js'),
       import('prismjs/components/prism-bash.js'),
@@ -122,7 +127,7 @@ const propertyDateValue = (
     const publishDate = data?.[0]?.[1]?.[0]?.[1]?.start_date
 
     if (publishDate) {
-      return `${formatDate(publishDate, {
+      return `Published ${formatDate(publishDate, {
         month: 'long'
       })}`
     }
@@ -281,7 +286,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         footer={footer}
       />
 
-
+      <GitHubShareButton />
     </>
   )
 }
