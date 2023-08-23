@@ -99,6 +99,12 @@
 .github:hover {
   border-color: #c9510c;
 }
+.Telegram .actionBgPane {
+  background: #847872;
+}
+.github:hover {
+  border-color: #5c109f;
+}
 
 .youtube .actionBgPane {
   background: #FF0000;
